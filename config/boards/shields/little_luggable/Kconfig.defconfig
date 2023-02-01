@@ -1,5 +1,8 @@
 if SHIELD_MY_BOARD
 
+config ZMK_BLE
+	default y
+
 config ZMK_KEYBOARD_NAME
     default "Little Luggable"
 
