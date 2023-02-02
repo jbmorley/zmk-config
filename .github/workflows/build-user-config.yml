@@ -97,9 +97,13 @@ jobs:
         run: west update
 
       - name: West Zephyr export
+        env:
+          ZEPHYR_BASE: ${{ inputs.config_path }}
         run: west zephyr-export
 
       - name: West Build (${{ env.display_name }})
+        env:
+          ZEPHYR_BASE: ${{ inputs.config_path }}
         shell: sh -x {0}
         run: west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
