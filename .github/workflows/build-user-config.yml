@@ -93,7 +93,7 @@ jobs:
 
       - name: West Update
         env:
-          ZEPHYR_BASE: ${{ inputs.config_path }
+          ZEPHYR_BASE: ${{ inputs.config_path }}
         run: west update
 
       - name: West Zephyr export
