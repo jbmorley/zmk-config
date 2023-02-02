@@ -2,9 +2,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    steps:
-    - uses: ./.github/workflows/build-user-config.yml
-      with:
-        build_matrix_path: keyboard/firmware/build.yaml
-        config_path: keyboard/firmware/config
-        archive_name: little-luggable
+    uses: ./.github/workflows/build-user-config.yml
+    with:
+      build_matrix_path: keyboard/firmware/build.yaml
+      config_path: keyboard/firmware/config
+      archive_name: little-luggable
