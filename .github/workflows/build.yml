@@ -1,14 +1,8 @@
 on: [push, pull_request, workflow_dispatch]
 
-defaults:
-  run:
-    working-directory: keyboard/firmware
-
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    # uses: ./.github/workflows/build-user-config.yml
-    # with:
-    #   build_matrix_path: keyboard/firmware/build.yaml
-    #   config_path: keyboard/firmware/config
-    #   archive_name: little-luggable
+    uses: ./.github/workflows/build-user-config.yml
+    with:
+      working_directory: keyboard/firmware
+      archive_name: little-luggable

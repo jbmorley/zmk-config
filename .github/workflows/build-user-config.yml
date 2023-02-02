@@ -23,6 +23,11 @@ on:
         default: 'firmware'
         required: false
         type: string
+      working_directory:
+        description: 'Archive output file name'
+        default: '.'
+        required: false
+        type: string
 
 jobs:
   matrix:
@@ -43,6 +48,10 @@ jobs:
           yaml2json ${{ inputs.build_matrix_path }} | jq
 
   build:
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
@@ -92,18 +101,12 @@ jobs:
         run: west init -l ${{ inputs.config_path }}
 
       - name: West Update
-        env:
-          ZEPHYR_BASE: ${{ inputs.config_path }}
         run: west update
 
       - name: West Zephyr export
-        env:
-          ZEPHYR_BASE: ${{ inputs.config_path }}
         run: west zephyr-export
 
       - name: West Build (${{ env.display_name }})
-        env:
-          ZEPHYR_BASE: ${{ inputs.config_path }}
         shell: sh -x {0}
         run: west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
