@@ -3,6 +3,8 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: ./.github/workflows/build-user-config.yml
+    env:
+      ZEPHYR_BASE: keyboard/firmware
     with:
       build_matrix_path: keyboard/firmware/build.yaml
       config_path: keyboard/firmware/config
