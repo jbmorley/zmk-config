@@ -92,6 +92,8 @@ jobs:
         run: west init -l ${{ inputs.config_path }}
 
       - name: West Update
+        env:
+          ZEPHYR_BASE: ${{ inputs.config_path }
         run: west update
 
       - name: West Zephyr export
