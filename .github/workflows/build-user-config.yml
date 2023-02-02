@@ -48,9 +48,6 @@ jobs:
           yaml2json ${{ inputs.build_matrix_path }} | jq
 
   build:
-    defaults:
-      run:
-        working-directory: ${{ inputs.working_directory }}
 
     runs-on: ubuntu-latest
     container:
