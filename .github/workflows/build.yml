@@ -11,4 +11,4 @@ jobs:
     with:
       build_matrix_path: keyboard-firmware/build.yaml
       config_path: keyboard-firmware
-      archive_name: little-luggable-firmware
+      archive_name: keyboard-firmware
