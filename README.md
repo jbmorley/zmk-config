@@ -10,6 +10,8 @@ Keyboard for the [Little Luggable cyberdeck](https://github.com/jbmorley/little-
 
 ![Little Luggable Keymap](images/little-luggable.png)
 
+The most up-to-date version of the Little Luggable keyboard hardware and firmware can be found in the [Little Luggable](https://github.com/jbmorley/little-luggable) repository.
+
 ## PsiBoard
 
 ### Keyboard Matrix
