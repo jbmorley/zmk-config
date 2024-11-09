@@ -14,7 +14,7 @@ Keyboard for the [Little Luggable cyberdeck](https://github.com/jbmorley/little-
 
 ### Keyboard Matrix
 
-The Psion Series 5 keyboard has the following keyboard matrix:
+The Psion Series 5 keyboard has the following keyboard matrix with bin numbering given for the 20-pin FFC connector:
 
 |                         | Col 0 (20) | Col 1 (19)  | Col 2 (18) | Col 3 (17)   | Col 4 (16) | Col 5 (14) | Col 6 (13) | Col 7 (12) |
 | ----------------------- | ---------- | ----------- | ---------- | ------------ | ---------- | ---------- | ---------- | ---------- |
@@ -25,3 +25,5 @@ The Psion Series 5 keyboard has the following keyboard matrix:
 | **Row 4 (8)**           | Left       | B           | . ?        | F            | 5          | L          | T          | Del        |
 | **Row 5 (7)**           | Right      | N           | Down       | G            | 6          | Enter      | Y          | ‘ ~        |
 | **Row 6 (6,5,4,3,2,1)** | Left Shift | Right Shift | Fn         | Left Control |            | Menu       | Esc        |            |
+
+N.B. The left and right shift, function, control, menu and escape keys are broken out on individual data lines (6, 5, 4, 3, 2, and 1) to allow diodes to be used prior to combining them into a single addressable row.
